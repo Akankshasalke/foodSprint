@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js"
 import foodRouter from "./routes/foodRoute.js"
 import userRouter from "./routes/userRoute.js"
 import 'dotenv/config.js'
+import cartRouter from "./routes/cartRoute.js"
 
 
 
@@ -25,6 +26,7 @@ app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
 //This code creates an endpoint (/images) to allow users to access files (like images) stored in the uploads folder. It’s useful for making uploaded images available to your frontend.
 app.use("/api/user",userRouter)
+app.use("/api/cart",cartRouter)
 
 
 app.get("/",(req,res)=>{
